@@ -8,6 +8,8 @@ public class Library {
 
 	String bookName;
 	String authorName;
+	int bookCount;
+	
 	@Id
 	String id;
 	
@@ -15,12 +17,21 @@ public class Library {
 		super();
 	}
 
-	public Library(String bookName, String authorName) {
+	public Library(String bookName, String authorName, int bookCount) {
 		super();
 		this.bookName = bookName;
 		this.authorName = authorName;
+		this.bookCount = bookCount;
 	}
 	
+	public int getBookCount() {
+		return bookCount;
+	}
+
+	public void setBookCount(int bookCount) {
+		this.bookCount = bookCount;
+	}
+
 	@Override
 	public String toString() {
 		return "Library [bookName=" + bookName + ", authorName=" + authorName + ", id=" + id + "]";

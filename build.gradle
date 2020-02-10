@@ -14,7 +14,9 @@ repositories {
 
 dependencies {
 // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-jdbc
-compile group: 'org.springframework.boot', name: 'spring-boot-starter-jdbc', version: '2.2.4.RELEASE'
+//compile group: 'org.springframework.boot', name: 'spring-boot-starter-jdbc', version: '2.2.4.RELEASE'
+// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-security
+compile group: 'org.springframework.boot', name: 'spring-boot-starter-security', version: '2.2.4.RELEASE'
 
 	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
@@ -24,6 +26,16 @@ compile group: 'org.springframework.boot', name: 'spring-boot-starter-jdbc', ver
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
 }
+
+/*configurations.all {
+    resolutionStrategy {
+        eachDependency { DependencyResolveDetails details ->
+            if (details.requested.group == "org.springframework") {
+                details.useVersion "4.1.0.BUILD-SNAPSHOT"
+            }
+        }
+    }
+}*/
 
 test {
 	useJUnitPlatform()
